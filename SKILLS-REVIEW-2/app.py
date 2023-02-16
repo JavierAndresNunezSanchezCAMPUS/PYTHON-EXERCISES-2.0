@@ -1,43 +1,31 @@
 """
-2. N atletas han pasado a finales en salto triple en los juegos
-olímpicos de 2022.
-
-Diseñe un programa que pida por teclado los nombres de cada
-atleta finalista y a su vez, sus marcas del salto en metros.
-
-Informar el nombre de la atleta campeona que se quede
-con la medalla de oro y si rompió récord, reportar el pago que
-será de 500 millones. El récord esta en 15,50 metros.
+3. En pocos días comienza la vuelta a España y la federación
+colombiana de ciclismo, como incentivo ha determinado pagar
+un valor adicional. El programa pedirá por teclado el sueldo
+básico por kilometro recorrido, el número de kilómetros
+recorridos durante toda la vuelta, numero de kilómetros
+recorridos con la camiseta de líder.
+Calcular el valor a pagar total, si se sabe que si recorre en la
+bici más de 1800 kilómetros con la camiseta de líder, esos
+kilómetros se consideran especiales y tendrán un recargo de
+25%.
+El total de kilómetros por recorrer durante toda la vuelta serán
+3.277 kilómetros,el ganador de la vuelta a España recibirá 700
+millones de pesos.
 """
 
-print("----------JUEGOS OLIMPICOS 2022----------")
+print("--------------VUELTA A ESPAÑA--------------")
 
-print("----------NOMBRES DE LOS ATLETAS FINALISTAS----------")
+sueldo = int and float(input("Sueldo básico por kilometro recorrido: "))
+kilometrosr = int and float(input("Número de kilometros recorridos: "))
+kilometroslider = int and float(input("Número de kilometros recorridos con camisa de lider: "))
 
-nombre1 = input("Escriba el nombre del atleta 1: ")
-nombre2 = input("Escriba el nombre del atleta 2: ")
-nombre3 = input("Escriba el nombre del atleta 3: ")
+print("VALOR TOTAL A PAGAR:")
+resultado = (sueldo*kilometrosr)
+print(resultado)
 
-print("----------MARCAS DEL SALTO EN METROS DE LOS ATLETAS----------")
+if kilometroslider > 1.800:
+    print("Obtiene recargo de 20%")
 
-salto1 = int(input("Digite el salto del atleta 1: "))
-salto2 = int(input("Digite el salto del atleta 2: "))
-salto3 = int(input("Digite el salto del atleta 3: "))
-
-if  salto1 > salto2 and salto3:     
-        if salto1 > 15.50:
-                print(f"El atleta {nombre1} ha rompido el record, recibió 500 millones")
-        print(f"GANADOR {nombre1}, ha ganado la medalla de oro")
-
-elif salto2 > salto3 and salto1:
-        if salto2 > 15.50:
-                print(f"El atleta {nombre2} ha rompido el record, recibió 500 millones")
-        print(f"GANADOR {nombre2}, ha ganado la medalla de oro")
-
-elif salto3 > salto1 and salto2:
-        if salto3 > 15.50:
-                print(f"El atleta {nombre3} ha rompido el record, recibió 500 millones")
-        print(f"GANADOR {nombre3}, ha ganado la medalla de oro")
-
-else:
-    print("Ha habido un empate entre los atletas")
+if kilometrosr == 3.277:
+    print("Ha ganado la vuelta a españa, ha recibo 700 millones de pesos")
