@@ -1,31 +1,60 @@
 """
-3. En pocos días comienza la vuelta a España y la federación
-colombiana de ciclismo, como incentivo ha determinado pagar
-un valor adicional. El programa pedirá por teclado el sueldo
-básico por kilometro recorrido, el número de kilómetros
-recorridos durante toda la vuelta, numero de kilómetros
-recorridos con la camiseta de líder.
-Calcular el valor a pagar total, si se sabe que si recorre en la
-bici más de 1800 kilómetros con la camiseta de líder, esos
-kilómetros se consideran especiales y tendrán un recargo de
-25%.
-El total de kilómetros por recorrer durante toda la vuelta serán
-3.277 kilómetros,el ganador de la vuelta a España recibirá 700
-millones de pesos.
+4. Una empresa tiene 500 almacenes. Cada almacén debe
+reportar el nombre y 5 registros c/u, contiene el tipo de articulo
+y el número de unidades vendidas de ese artículo.
+
+Haga un programa en Python para determinar cuál fue el
+almacén que mas vendió, cual fue el articulo más vendido de
+ese almacén y cual el más vendido en general.
 """
 
-print("--------------VUELTA A ESPAÑA--------------")
+print("-----------------------EMPRESA-----------------------\n")
 
-sueldo = int and float(input("Sueldo básico por kilometro recorrido: "))
-kilometrosr = int and float(input("Número de kilometros recorridos: "))
-kilometroslider = int and float(input("Número de kilometros recorridos con camisa de lider: "))
+print("-------------------Almacen de Ropa-------------------")
+camisas = int(input("Camisas vendidas: "))
+pantalones = int(input("Pantalones vendidos: "))
+boxers = int(input("Boxers vendidos: "))
+camisillas = int(input("Camisillas vendidas: "))
+medias = int(input("Medias vendidas: "))
 
-print("VALOR TOTAL A PAGAR:")
-resultado = (sueldo*kilometrosr)
-print(resultado)
 
-if kilometroslider > 1.800:
-    print("Obtiene recargo de 20%")
+d1 = dict([
+    ("Camisas",(camisas)), 
+    ("Pantalones",(pantalones)), 
+    ("Boxers",(boxers)), 
+    ("Camisillas",(camisillas)), 
+    ("Medias",(medias)),
+])
 
-if kilometrosr == 3.277:
-    print("Ha ganado la vuelta a españa, ha recibo 700 millones de pesos")
+print(d1)
+
+print("-------------------Almacen de Frutas-------------------")
+piñas = int(input("Piñas vendidas: "))
+bananos = int(input("Bananos vendidos: "))
+peras = int(input("Peras vendidas: "))
+manzanas = int(input("Manzanas vendidas: "))
+naranjas = int(input("Naranjas vendidas: "))
+
+d2 = dict([
+    ("Piñas",(piñas)), 
+    ("Bananos",(bananos)), 
+    ("Peras",(peras)), 
+    ("Manzanas",(manzanas)), 
+    ("Naranjas",(naranjas)),
+])
+
+print(d2)
+
+
+ropavendida = ((camisas)+(pantalones)+(boxers)+(camisillas)+(medias))
+frutavendida = ((piñas)+(bananos)+(peras)+(manzanas)+(naranjas))
+print("ALMACEN QUE MÁS VENDIÓ: ")
+
+if ropavendida > frutavendida:
+    print("ALMACEN DE ROPA")
+    print(ropavendida)
+
+else: print("ALMACEN DE FRUTAS")
+print(frutavendida)
+
+# Solo pude hacer que imprimiera el almacen que más productos vendió, no supe hacer los otros 2 factores.
