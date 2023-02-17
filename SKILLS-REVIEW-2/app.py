@@ -10,51 +10,48 @@ ese almacén y cual el más vendido en general.
 
 print("-----------------------EMPRESA-----------------------\n")
 
-print("-------------------Almacen de Ropa-------------------")
-camisas = int(input("Camisas vendidas: "))
-pantalones = int(input("Pantalones vendidos: "))
-boxers = int(input("Boxers vendidos: "))
-camisillas = int(input("Camisillas vendidas: "))
-medias = int(input("Medias vendidas: "))
-
+print("-------------------Almacen de Ropa-------------------\n")
 
 d1 = dict([
-    ("Camisas",(camisas)), 
-    ("Pantalones",(pantalones)), 
-    ("Boxers",(boxers)), 
-    ("Camisillas",(camisillas)), 
-    ("Medias",(medias)),
+    ("Camisas",70), 
+    ("Pantalones",40), 
+    ("Boxers",30), 
+    ("Camisillas",30), 
+    ("Medias",100),
 ])
+
+moreVR = max(d1,key=d1.get)
 
 print(d1)
 
-print("-------------------Almacen de Frutas-------------------")
-piñas = int(input("Piñas vendidas: "))
-bananos = int(input("Bananos vendidos: "))
-peras = int(input("Peras vendidas: "))
-manzanas = int(input("Manzanas vendidas: "))
-naranjas = int(input("Naranjas vendidas: "))
+total=sum(d1.values())
+print("TOTAL DE UNIDADES VENDIDAS EN EL ALMACEN DE ROPA:\n")
+print(total)
+
+print("-------------------Almacen de Frutas-------------------\n")
 
 d2 = dict([
-    ("Piñas",(piñas)), 
-    ("Bananos",(bananos)), 
-    ("Peras",(peras)), 
-    ("Manzanas",(manzanas)), 
-    ("Naranjas",(naranjas)),
+    ("Piñas",50), 
+    ("Bananos",90), 
+    ("Peras",80), 
+    ("Manzanas",40), 
+    ("Naranjas",70),
 ])
+
+moreVF = max(d2,key=d2.get)
 
 print(d2)
 
+total2=sum(d2.values())
 
-ropavendida = ((camisas)+(pantalones)+(boxers)+(camisillas)+(medias))
-frutavendida = ((piñas)+(bananos)+(peras)+(manzanas)+(naranjas))
-print("ALMACEN QUE MÁS VENDIÓ: ")
+totald1=sum(d1.values())
+totald2=sum(d2.values())
 
-if ropavendida > frutavendida:
-    print("ALMACEN DE ROPA")
-    print(ropavendida)
 
-else: print("ALMACEN DE FRUTAS")
-print(frutavendida)
-
-# Solo pude hacer que imprimiera el almacen que más productos vendió, no supe hacer los otros 2 factores.
+print("TOTAL DE UNIDADES EN EL ALMACEN DE FRUTAS CON MÁS ARTICULOS VENDIDOS:\n")
+print(total2)
+print("----------------------------------------------------------")
+print(f"El almacen que más vendió fue el de frutas con {total2} unidades\n")
+print(f"El articulo más vendido de este almacén fue {moreVF} con 90 unidades\n")
+print(f"El articulo más vendido en general es {moreVR} con 100 unidades\n")
+print("-----------------|> Fin del comunicado <|-----------------")
